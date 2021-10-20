@@ -3,7 +3,7 @@
  <img src="https://img.icons8.com/color/96/000000/spotify--v3.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">AutoInsta</h3>
+<h3 align="center">Spotify Download via Telegram</h3>
 
 <div align="center">
 
