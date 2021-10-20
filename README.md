@@ -64,8 +64,9 @@ USERNAME_BOT = "your bot name here"
 python3 sptdlbot.py
 
 ```
+<img src="https://media0.giphy.com/media/5dqOCsWGztbiAQWhgx/giphy.gif?cid=790b7611e80047821f61ac948baceed69b70cb9b50ca1603&rid=giphy.gif&ct=g" alt="See" width="440" height="736">
 
-<iframe src="https://giphy.com/embed/5dqOCsWGztbiAQWhgx" width="287" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spotify-download-sptdlbot-5dqOCsWGztbiAQWhgx">via GIPHY</a></p>
+
 
 ## ✍️ Authors <a name = "authors"></a>
 
