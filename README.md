@@ -68,5 +68,5 @@ python3 sptdlbot.py
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@oicarosales](https://github.com/oicarosales) 
-- [@oicarosales](https://instagram.com/oicarosalles) - Talk to me on Instagram
+- [@oicarosalles](https://instagram.com/oicarosalles) - Talk to me on Instagram
 - [@oicarosales](https://twitter.com/oicarosales) - Talk to me on Twitter
