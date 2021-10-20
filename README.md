@@ -46,10 +46,7 @@ spotdl
 
 ### Use
 
-```
-1. Create a Telegram bot on https://t.me/botfather 
-
-```
+<p>1. Create a Telegram bot on https://t.me/botfather</p>
 
 
 ```
