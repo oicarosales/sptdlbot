@@ -64,7 +64,7 @@ USERNAME_BOT = "your bot name here"
 python3 sptdlbot.py
 
 ```
-<img src="https://media0.giphy.com/media/5dqOCsWGztbiAQWhgx/giphy.gif?cid=790b7611e80047821f61ac948baceed69b70cb9b50ca1603&rid=giphy.gif&ct=g" alt="See" width="440" height="736">
+<img src="https://media0.giphy.com/media/5dqOCsWGztbiAQWhgx/giphy.gif?cid=790b7611e80047821f61ac948baceed69b70cb9b50ca1603&rid=giphy.gif&ct=g" align="center" alt="See" width="440" height="736">
 
 
 
