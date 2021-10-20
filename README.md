@@ -64,8 +64,8 @@ USERNAME_BOT = "your bot name here"
 python3 sptdlbot.py
 
 ```
-![screen-gif](/home/icaro/MEGA/projetos/sptdltelegrambot/video.gif)
-<img src="/home/icaro/MEGA/projetos/sptdltelegrambot/video.gif" alt="My Project GIF" width="440" height="736">
+
+<iframe src="https://giphy.com/embed/5dqOCsWGztbiAQWhgx" width="287" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spotify-download-sptdlbot-5dqOCsWGztbiAQWhgx">via GIPHY</a></p>
 
 ## ✍️ Authors <a name = "authors"></a>
 
