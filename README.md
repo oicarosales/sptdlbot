@@ -49,10 +49,8 @@ spotdl
 <p>1. Create a Telegram bot on https://t.me/botfather</p>
 
 
-```
-2. Locate and change the TOKEN and USERNAME_BOT for the data of your Telegram bot.
+<p>2. Locate and change the TOKEN and USERNAME_BOT for the data of your Telegram bot.</p>
 
-```
 
 ```
 TOKEN = "your bot tokken here"
@@ -60,10 +58,7 @@ USERNAME_BOT = "your bot name here"
 
 ```
 
-```
-3. Run script and start bot on Telegram.
-
-```
+<p>3. Run script and start bot on Telegram.</p>
 
 ```
 python3 sptdlbot.py
