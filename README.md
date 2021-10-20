@@ -64,8 +64,8 @@ USERNAME_BOT = "your bot name here"
 python3 sptdlbot.py
 
 ```
-
-<img src="./video.gif" alt="My Project GIF" width="440" height="736">
+![screen-gif](/home/icaro/MEGA/projetos/sptdltelegrambot/video.gif)
+<img src="/home/icaro/MEGA/projetos/sptdltelegrambot/video.gif" alt="My Project GIF" width="440" height="736">
 
 ## ✍️ Authors <a name = "authors"></a>
 
