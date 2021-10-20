@@ -65,6 +65,8 @@ python3 sptdlbot.py
 
 ```
 
+<img src="./video.gif" alt="My Project GIF" width="440" height="736">
+
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@oicarosales](https://github.com/oicarosales) 
