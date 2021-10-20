@@ -8,9 +8,9 @@ from datetime import datetime
 date = datetime.today()
 sufixo = date.strftime('%Y-%m-%d')
 
-TOKEN = "2067733780:AAEKn5B3NKpNkJOZjptGzo5sVPWNp4JfBUA"
+TOKEN = "bot token aqui"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
-USERNAME_BOT = "sptdl_bot"
+USERNAME_BOT = "nome do bot aqui"
 
 
 def get_url(url):
