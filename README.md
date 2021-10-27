@@ -65,6 +65,10 @@ python3 sptdlbot.py
 
 ```
 
+### You can test it on following the link 
+
+-[https://t.me/sptdl_bot]
+
 <div align="center">
 <img src="https://media0.giphy.com/media/5dqOCsWGztbiAQWhgx/giphy.gif?cid=790b7611e80047821f61ac948baceed69b70cb9b50ca1603&rid=giphy.gif&ct=g" alt="See" width="440" height="736">
 </div>
