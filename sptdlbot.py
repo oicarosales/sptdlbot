@@ -1,4 +1,3 @@
-from genericpath import exists
 import json
 import requests
 import urllib
