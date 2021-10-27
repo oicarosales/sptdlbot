@@ -1,12 +1,11 @@
+from genericpath import exists
 import json
 import requests
 import urllib
 import os
 import glob
-from datetime import datetime
-
-date = datetime.today()
-sufixo = date.strftime('%Y-%m-%d')
+import threading
+import time
 
 TOKEN = "bot token aqui"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
@@ -46,6 +45,7 @@ def echo_all(updates):
             if update.get("message", {}).get("text") != None:
                 text = update["message"]["text"]
                 chat = update["message"]["chat"]["id"]
+                os.system("rm -rf /tmp/{}".format(chat)+"/*.mp3")
                 print(text)
                 
                 if text == "/test" or text == "/test@" + USERNAME_BOT:
@@ -54,25 +54,30 @@ def echo_all(updates):
 
                 elif text == "/start" or text == "/start@" + USERNAME_BOT:
                     os.system("mkdir -p /tmp/{}".format(chat))
-                    send_message(
-                        "Olá, estou sendo programado para lhe ajudar em algumas tarefas.\nDigite /ajuda para conhecer as minhas habilidades.", chat)
+                    send_message("Me envie o link da música ou playlist do Spotify.\nDigite /ajuda para saber mais sobre como usar", chat)
 
                 elif text == "/ajuda" or text == "/ajuda@" + USERNAME_BOT:
-                    send_message(
-                        "Me envie o link de uma música do Spotify que eu vou baixar e enviar para você.\nVoce também pode me enviar o link de uma playlist, e isso leva mais tempo dependendo da quantidade de músicas que há nela.", chat)
+                    send_message("/ajuda - Mostra esta mensagem de ajuda.\nA qualquer momento, me envie o link de uma música ou playlist que eu baixo e envio para você.\nLembre-se, playlists com muitas musicas podem demorar um pouco.", chat) 
                     
                 
                 elif "https://open.spotify.com" in text:
-                    send_message(
-                        "Aguarde enquanto baixo o conteúdo do Spotify...", chat)
-                    spotdl(text, "/tmp/{}".format(chat))
+                    text, interrogacao, ignora = text.partition('?')
+                    try:
+                        os.system("mkdir -p /tmp/{}".format(chat))
+                    except:
+                        pass
+                    send_message("Aguarde enquanto baixo o conteúdo do Spotify...", chat)
                     
-                    send_message(
-                        "Preparando para enviar...", chat)
-                    lista = glob.glob("/tmp/{}".format(chat)+"/*.mp3")
-                    for audio in lista:
-                        send_document(audio, chat)
-                    os.system("rm -rf /tmp/{}".format(chat)+"/*.mp3")
+                    def download_spotify(url, chat_id):
+                        os.system("mkdir -p /tmp/{}".format(chat_id))
+                        spotdl(url, "/tmp/{}".format(chat_id))
+                        send_message("Download concluído.\nAguarde enquanto envio o conteúdo para você...", chat_id)
+                        for file in glob.glob("/tmp/{}".format(chat_id)+"/*.mp3"):
+                            send_document(file, chat_id)
+                            os.system("rm -rf /tmp/{}/{}".format(chat_id,file))
+                    threading.Thread(target=download_spotify, args=(text, chat)).start()
+                                    
+                   
                     
                 #EASTER EGG
                 elif text == "Obrigado" or text == "Obrigada" or text == "obrigada" or text == "obrigado":
@@ -83,18 +88,18 @@ def echo_all(updates):
                     get_updates
 
 def spotdl(url, destination_folder):
-    os.system("taskset --cpu-list 0 spotdl {}".format(url) +
-              " -o {}".format(destination_folder))
-
+    os.system("taskset --cpu-list 0 spotdl -o {} {}".format(destination_folder, url))
+    
+    
+def send_document(doc, chat_id):
+    files = {'document': open(doc, 'rb')}
+    requests.post(URL + "sendDocument?chat_id={}".format(chat_id), files=files)
+        
+    
 def send_message(text, chat_id):
     tot = urllib.parse.quote_plus(text)
     url = URL + "sendMessage?text={}&chat_id={}".format(tot, chat_id)
     get_url(url)
-
-
-def send_document(doc, chat_id):
-    files = {'document': open(doc, 'rb')}
-    requests.post(URL + "sendDocument?chat_id={}".format(chat_id), files=files)
 
 
 def main():
